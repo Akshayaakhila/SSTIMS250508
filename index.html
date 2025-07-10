@@ -2,63 +2,257 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Expense Tracker</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #3f0071;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 60px 30px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgb(136, 210, 16);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: rgb(0, 183, 255);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .avatar {
+      margin-top: 20px;
+      width: 140px;
+      border-radius: 50%;
+    }
+
+    .social-icons i {
+      font-size: 20px;
+      margin: 15px 10px;
+      color: #3f0071;
+      cursor: pointer;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #3f0071;
+      margin-bottom: 30px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill-card, .project-card {
+      background: #2b0050;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 150px;
+      text-align: center;
+    }
+
+    .project-card {
+      background: #4b0082;
+      width: 250px;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      border: none;
+      background: #3f0071;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #3f0071;
+      color: white;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .hero > div {
+        max-width: 50%;
+      }
+
+      .avatar {
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Expense Tracker</h1>
 
-    <form id="salary-form">
-      <input type="number" id="monthly-salary" placeholder="80000" required />
-      <button type="submit">Set Salary</button>
-    </form>
+  <nav>
+    <div><strong>MyPortfolio</strong></div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  
-      <form id="expense-form">
-      <input type="text" id="groceries" placeholder="Groceries" required />
-      <input type="1." id="3000" placeholder="3000" required />
-      <input type="text" id="food" placeholder="food" required />
-      <input type="06/06/2025" id="800" required />
-      <button type="submit">Add Expense</button>
-    </form>
-
-      <form id="expense-form">
-      <input type="text" id="vacation" placeholder="vacation" required />
-      <input type="2." id="" placeholder="Category" required />
-      <input type="date" id="expxpense-amount" placeholder="Amount (₹)" required />
-      <input type="text" id="ense-date" required />
-      <button type="submit">Add Expense</button>
-    </form>
-
-      <form id="expense-form">
-      <input type="text" id="groceries" placeholder="Expense Name" required />
-      <input type="number" id="expense-amount" placeholder="Amount (₹)" required />
-      <input type="text" id="expense-category" placeholder="Category" required />
-      <input type="date" id="expense-date" required />
-      <button type="submit">Add Expense</button>
-    </form>
-
-      <form id="expense-form">
-      <input type="text" id="groceries" placeholder="Expense Name" required />
-      <input type="number" id="expense-amount" placeholder="Amount (₹)" required />
-      <input type="text" id="expense-category" placeholder="Category" required />
-      <input type="date" id="expense-date" required />
-      <button type="submit">Add Expense</button>
-    </form>
-
-    <div class="summary">
-      <h2>Total Monthly Income: ₹<span id="monthly-income">0</span></h2>
-      <h2>Total Spent This Month: ₹<span id="total-amount">0</span></h2>
-      <h2>Remaining Balance: ₹<span id="remaining-balance">0</span></h2>
+  <!-- Home Section -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Hi,<br>I'm <span>Akshaya Kalathoti</span></h1>
+      <span style="color: black(0, 255, 162);">pursuing B-tech final year in MVR college of engineering and technology</span></p>
+      <div class="social-icons">
+        <i class="fab fa-github"></i>
+        <i class="fab fa-email"></i>
+      </div>
     </div>
+    <img class="avatar" src="images/akshaya.png" alt="Your Avatar">
+  </section>
 
-    <h2>Daily Expenses</h2>
-    <ul id="expense-list"></ul>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+    Hello! I'm Akshaya,To associate with an organization that gives me opportunity to contribute my technical skills, academic skills for successful implementation of projects and best practices. The qualities that i have achieved leadership, class ambazedor and qucik learner. Experience and self-motivated manager bringing forth valuable industry experience and a passion for management. Result oriented with a proven track record of working collaboratively with team members to achieve goals.</p>    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" style="background: #f1f1f1;">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">Node.js</div>
+      <div class="skill-card">Git</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>AI with python</h3>
+        <p>Developed and maintained artificial intelligence using python(TensorFlow) leveraging TensorFlow's capabilities</p>
+           
+    </div>
+      <div class="project-card">
+        <h3>Robotics</h3>
+        <p>Developed and Implemented Human-Robot Interaction(HRI)</p>
+      </div>
+      <div class="project-card">
+        <h3>Machine Learning</h3>
+        <p>Implemented programming language of web development,software development and Data science</p>
+      </div>
+    </div>
+  </section>
+<!-- Contact Section -->
+<section id="contact" style="background: #f1f1f1;">
+  <h2 class="section-title">Contact Me</h2>
+
+  <div style="text-align: center; margin-bottom: 20px;">
+    <p><strong>Email:</strong> <a href="mailto:yourmail@gmail.com" style="color: #3f0071;">akshayakalathoti@gmail.com</a></p>
+       
+   
+
+    <!-- Social icons -->
+    <div class="social-icons" style="margin-top: 10px;">
+      <a href="mailto:akshayakalathoti@gmail.com"><i class="fas fa-envelope" style="margin: 0 10px;"></i></a>
+      
+    </div>
   </div>
 
-  <script src="script.js"></script>
+ 
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+ 
+
+  <footer>
+    © 2025 Akshaya. All rights reserved.
+  </footer>
+
 </body>
 </html>
-
